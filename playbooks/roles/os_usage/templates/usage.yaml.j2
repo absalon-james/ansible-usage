@@ -1,0 +1,7 @@
+auth_kwargs:
+  auth_url: {{ keystone_service_internalurl }}
+  username: {{ openrc_os_username }}
+  password: {{ keystone_auth_admin_password }}
+  project_name: {{ openrc_os_tenant_name }}
+  user_domain_name: {{ openrc_os_domain_name }}
+  project_domain_name: {{ openrc_os_domain_name }}

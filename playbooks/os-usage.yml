@@ -1,0 +1,5 @@
+- name: Install os-usage
+  hosts: utility
+  user: root
+  roles:
+   - role: "os_usage"

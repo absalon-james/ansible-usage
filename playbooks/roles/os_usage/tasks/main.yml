@@ -1,0 +1,36 @@
+- name: Clone usage repo
+  git:
+    repo: "{{ usage_repo }}"
+    dest: "/root/usage"
+    version: "{{ usage_version }}"
+
+- name: Install usage utility from repo
+  shell: cd /root/usage; python setup.py install
+
+- name: Create usage config directory
+  file:
+    path: "{{ usage_config_dir }}"
+    state: "directory"
+    mode: "0644"
+
+- name: Create Usage config file
+  template:
+    src: usage.yaml.j2
+    dest: "{{ usage_config_dir }}/usage.yaml"
+    owner: root
+    group: root
+    mode: "0600"
+
+- name: Create usage report file
+  template:
+    src: report.yaml.j2
+    dest: "{{ usage_config_dir }}/report.yaml"
+    owner: root
+    group: root
+    mode: "0644"
+
+- name: Create usage reports directory
+  file:
+    path: "{{ usage_reports_dir }}"
+    state: directory
+    mode: "0644"

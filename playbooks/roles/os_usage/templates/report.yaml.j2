@@ -106,3 +106,51 @@ items:
     item_rate: 0.05
     description: Volume size in GB hours
     product_name: Volume
+
+ - meter_name: storage.containers.objects.size
+    billing_entity: OpenStack
+    line_item_type: Usage
+    product_code: Object Storage
+    usage_type: Bytes
+    operation:
+    currency_code: USD
+    item_rate: 0.1
+    description: Total size of stored objects in container
+    product_name: Object Storage
+    conversion: bytes_to_gigabytes
+
+  - meter_name: storage.objects.incoming.bytes
+    billing_entity: OpenStack
+    line_item_type: Usage
+    product_code: Object Storage
+    usage_type: Bytes
+    operation:
+    currency_code: USD
+    item_rate: 0.1
+    description: Number of incoming bytes
+    product_name: Object Storage
+    conversion: bytes_to_gigabytes
+
+  - meter_name: storage.objects.outgoing.bytes
+    billing_entity: OpenStack
+    line_item_type: Usage
+    product_code: Object Storage
+    usage_type: Bytes
+    operation:
+    currency_code: USD
+    item_rate: 0.1
+    description: Number of outgoing bytes
+    product_name: Object Storage
+    conversion: bytes_to_gigabytes
+
+  - meter_name: storage.objects.size
+    billing_entity: OpenStack
+    line_item_type: Usage
+    product_code: Object Storage
+    usage_type: Bytes
+    operation:
+    currency_code: USD
+    item_rate: 0.1
+    description: Total size of stored objects
+    product_name: Object Storage
+    conversion: bytes_to_gigabytes

@@ -29,8 +29,30 @@
     group: root
     mode: "0644"
 
+- name: Create usage licensing definition
+  template:
+    src: licensing-definition.yaml.j2
+    dest: "{{ usage_config_dir }}/licensing-definition.yaml"
+    owner: root
+    group: root
+    mode: "0644"
+
+- name: Create usage licensing report definition
+  template:
+    src: licensing-report.yaml.j2
+    dest: "{{ usage_config_dir }}/licensing-report.yaml"
+    owner: root
+    group: root
+    mode: "0644"
+
 - name: Create usage reports directory
   file:
     path: "{{ usage_reports_dir }}"
+    state: directory
+    mode: "0644"
+
+- name: Create usage licensing reports directory
+  file:
+    path: "{{ usage_licensing_reports_dir }}"
     state: directory
     mode: "0644"

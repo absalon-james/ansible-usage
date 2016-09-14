@@ -11,44 +11,28 @@ columns:
     func: meter_name
   - name: user:UAI
     func: metadata:UAI
-  - name: user:environment
-    func: metadata:environment
   - name: Display Name
     func: display_name
-  - name: Availability Zone
-    func: availability_zone
   - name: Instance Type/Flavor
     func: instance_type
-  - name: Invoice Id
-    func: invoice_id
-  - name: Billing Entity
-    func: billing_entity
   - name: Billing Period Start Date
     func: billing_period_start_date
   - name: Billing Period End Date
     func: billing_period_end_date
-  - name: Usage Account Id
-    func: usage_account_id
-  - name: Line Item Type
-    func: line_item_type
   - name: Usage Start Date
     func: usage_start_date
   - name: Usage End Date
     func: usage_end_date
-  - name: Product Code
-    func: product_code
   - name: Usage Type
     func: usage_type
-  - name: Operation
-    func: operation
   - name: Usage Amount
     func: usage_amount
   - name: Item Rate
     func: item_rate
   - name: Cost
     func: cost
-  - name: Currency Code
-    func: currency_code
+  - name: Hours
+    func: hours
   - name: Description
     func: description
   - name: Product Name
@@ -80,6 +64,17 @@ items:
     product_name: Compute
     conversion: megabytes_to_gigabytes
 
+  - meter_name: disk.root.size
+    billing_entity: OpenStack
+    line_item_type: Usage
+    product_code: Compute
+    usage_type: GB Hours
+    operation: RunInstances
+    currency_code: USD
+    item_rate: 0.1
+    description: Root Disk Size in GB Hours
+    product_name: Compute
+
   - meter_name: image.size
     billing_entity: OpenStack
     line_item_type: Usage
@@ -102,3 +97,36 @@ items:
     item_rate: 0.05
     description: Volume size in GB hours
     product_name: Volume
+
+  - meter_name: snapshot.size
+    billing_entity: OpenStack
+    line_item_type: Usage
+    product_code: Volume
+    usage_type: GB Hours
+    operation: volumes
+    currency_code: USD
+    item_rate: 0.05
+    description: Snapshot size in GB Hours
+    product_name: Volume
+
+  - meter_name: storage.containers.objects.size
+    billing_entity: OpenStack
+    line_item_type: Usage
+    product_code: Object Storage
+    usage_type: GB Hours
+    operation: volumes
+    currency_code: USD
+    item_rate: 0.05
+    description: Object Storage Size in GB hours
+    product_name: Object Storage
+
+  - meter_name: network.services.lb.loadbalancer
+    billing_entity: OpenStack
+    line_item_type: Usage
+    product_code: Load Balancers
+    usage_type: Load Balancers
+    operation: network
+    currency_code: USD
+    item_rate: 0.05
+    description: Load Balancer
+    product_name: Network

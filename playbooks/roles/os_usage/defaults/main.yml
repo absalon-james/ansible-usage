@@ -1,5 +1,5 @@
 usage_repo: https://github.com/absalon-james/usage.git
-usage_version: b661cb965ff5ad39d2d0dd43d772bcdbc97f3798
+usage_version: 546b9574fdf8e9bb7231cc19af4b9ad63bd85b5b
 
 usage_config_dir: /etc/usage
 usage_reports_dir: /etc/usage/reports

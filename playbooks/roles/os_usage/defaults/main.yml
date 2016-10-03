@@ -1,5 +1,5 @@
-usage_repo: https://github.com/absalon-james/usage.git
-usage_version: b661cb965ff5ad39d2d0dd43d772bcdbc97f3798
+usage_repo: https://github.com/rackerlabs/openstack-usage-report.git
+usage_version: 7e71bb6a789887d6ea7d3a78a27698becdb29175
 
 usage_config_dir: /etc/usage
 usage_reports_dir: /etc/usage/reports

@@ -68,12 +68,13 @@ items:
     billing_entity: OpenStack
     line_item_type: Usage
     product_code: Compute
-    usage_type: GB Hours
+    usage_type: GB days
     operation: RunInstances
     currency_code: USD
     item_rate: 0.1
-    description: Root Disk Size in GB Hours
+    description: Root Disk Size in GB days
     product_name: Compute
+    conversion: hours_to_days
 
   - meter_name: image.size
     billing_entity: OpenStack
@@ -91,12 +92,13 @@ items:
     billing_entity: OpenStack
     line_item_type: Usage
     product_code: Volume
-    usage_type: GB Hours
+    usage_type: GB days
     operation: volumes
     currency_code: USD
     item_rate: 0.05
-    description: Volume size in GB hours
+    description: Volume size in GB days
     product_name: Volume
+    conversion: hours_to_days
 
   - meter_name: snapshot.size
     billing_entity: OpenStack
